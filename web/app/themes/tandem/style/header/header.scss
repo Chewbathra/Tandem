@@ -1,0 +1,49 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+
+  color: $color;
+
+  line-height: 1;
+  border-bottom: 1px solid $border-color;
+
+  a {
+    text-decoration: none;
+    color: $color;
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+.header-middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  a {
+    font-family: "Baskerville Old Face", sans-serif !important;
+    font-weight: bold;
+    color: $accent-color;
+    font-size: 2.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+}
+
+@media screen and (max-width: 580px) {
+  .header-right,
+  .header-left {
+    display: none;
+  }
+  .header {
+    justify-content: center;
+  }
+}
+
+@import "navbar";

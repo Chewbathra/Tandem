@@ -1,0 +1,31 @@
+.navbar{
+  margin-bottom: 2rem;
+}
+.menu-item-has-children {
+  position: relative;
+}
+
+.navbar-menu-subitem {
+  position: absolute;
+  display: none;
+  padding: 0;
+  //white-space: pre-line;
+  //margin: -25px 0 0;
+
+}
+
+.navbar-menu-subitem.active {
+  display: block;
+}
+
+.menu-subitems {
+  width: 10rem;
+  font-weight: normal;
+  list-style-type: '';
+  margin-top: 0.25rem;
+  padding-left: 0.2rem;
+}
+
+.menu-subitems a {
+  text-align: left;
+}

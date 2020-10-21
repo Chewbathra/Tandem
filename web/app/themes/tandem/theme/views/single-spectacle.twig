@@ -1,0 +1,77 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="spectacle">
+        <div class="spectacle-sidebar">
+            <img src="{{ post.thumbnail.src('thumbnail') }}" alt="{{ post.thumbnail.caption }}" class="sidebar-image">
+            <div class="sidebar-dates">
+                {% if post.has_term('finished') %}
+                    <div class="date">
+                        La pièce est terminée
+                    </div>
+                {% else %}
+                    {% set datesLength = post.meta('importants_informations_datetimes') | length %}
+                    {% if datesLength > 0 %}
+                        {% for item in post.meta('importants_informations_datetimes') %}
+                            <div class="date">
+                                Le <i>{{ item['datetime']|split(" ")[0] }}</i> à
+                                <i>{{ item['datetime']|split(" ")[1] }}</i>
+                                {% if item['full'] == 1 %}
+                                    <span class="full">Complet</span>
+                                {% else %}
+                                    <span class="free">Disponible</span>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="date">
+                            Les dates ne sont pas encore définies
+                        </div>
+                    {% endif %}
+                {% endif %}
+            </div>
+            <div class="sidebar-location">
+                {% if address != "" %}
+                    <hr>
+                    <div class="location-label">{{ label }}</div>
+                    <div class="location-address">{{ address }}</div>
+                    <div class="location-map">
+                        {{ map }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="spectacle-content">
+            <h1 class="page-title">{{ post.title }}</h1>
+            {{ post.content }}
+        </div>
+    </div>
+{% endblock %}
+{#    <div class="page-grid">#}
+{#        <div class="sidebar">#}
+{#            <div class="sidebar-image">#}
+{#                <img src="{{ post.thumbnail.src('medium')}}" alt="{{ post.thumbnail.caption }}" class="zoom">#}
+{#            </div>#}
+{#            <p class="sidebar-date">#}
+{#                {{ post.has_term('showstatus', 'past') }}#}
+{#                {% if post.has_term('past') %}#}
+{#                    Spectacle terminé#}
+{#                {% else %}#}
+{#                    {{ post.meta('show_dates') }}#}
+{#                {% endif %}#}
+{#            </p>#}
+{#            <hr>#}
+{#            <h5 class="sidebar-location">{{ label }}</h5>#}
+{#            <p class="sidebar-address">#}
+{#                {{ address }}#}
+{#            </p>#}
+{#            <div class="sidebar-map">#}
+{#                {{ map }}#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="content">#}
+{#            <h1 class="page-title">{{ post.title }}</h1>#}
+{#            {{ post.content }}#}
+{#        </div>#}
+{#    </div>#}
+

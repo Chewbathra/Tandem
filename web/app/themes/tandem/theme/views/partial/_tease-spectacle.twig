@@ -1,0 +1,46 @@
+<div class="tease">
+    <div class="tease-content">
+        <div class="tease-title">
+            {{ post.title }}
+        </div>
+        <div class="tease-dates">
+            {% if post.has_term('finished') %}
+                La pièce est terminée
+            {% else %}
+                {% set datesLength = post.meta('importants_informations_datetimes') | length %}
+                {% if datesLength > 0 %}
+                    Du <i>{{ post.meta('importants_informations_datetimes')[0]['datetime']|split(" ")[0] }}</i>
+                    au
+                    <i>{{ post.meta('importants_informations_datetimes')[datesLength-1]['datetime']|split(" ")[0] }}</i>
+                {% else %}
+                    Les dates ne sont pas encore définies
+                {% endif %}
+            {% endif %}
+        </div>
+        <div class="tease-excerpt">
+            {{ post.preview.length(160).read_more('') }}
+        </div>
+        <a href="{{ post.link }}" class="tease-link">Plus d'informations</a>
+    </div>
+    <img class="zoom tease-image" src="{{ post.thumbnail.src('thumbnail') }}"
+         alt="{{ post.thumbnail.caption }}">
+</div>
+{#    </div>#}
+    {#    <div class="tease-title">{{ post.title }}</div>#}
+    {#    <div class="tease-content">#}
+    {#        <div class="content-text">#}
+    {#            <div class="content-dates">#}
+    {#                {% for item in post.meta('important_information_datetimes')%}#}
+    {#                    {{ item['datetime'] }}#}
+    {#                    {{ item['full'] }}#}
+    {#                {% endfor %}#}
+    {#            </div>#}
+    {#            <div class="content-excerpt">#}
+    {#                 po{{st.preview.length(210).read_more('') }}#}
+    {#            </div>#}
+    {#            <a href="{{ post.link }}" class="content-link">Plus d'informations</a>#}
+    {#        </div>#}
+    {#        <div class="content-image">#}
+    {#            <img class="zoom" src="{{ post.thumbnail.src('thumbnail') }}"#}
+    {#                 alt="{{ post.thumbnail.caption }}">#}
+    {#        </div>#}

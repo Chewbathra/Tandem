@@ -1,0 +1,83 @@
+{
+  "name": "tandem/tandem",
+  "type": "project",
+  "license": "MIT",
+  "description": "A wordpress project for Tandem theater troup",
+  "authors": [
+    {
+      "name": "Loïc Schüpbach"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org",
+      "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
+    },
+    {
+      "type": "composer",
+      "url": "https://wp-languages.github.io",
+      "only": ["koodimonni-language/*"]
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "composer/installers": "^1.8",
+    "vlucas/phpdotenv": "^4.1.8",
+    "oscarotero/env": "^2.1",
+    "roots/bedrock-autoloader": "^1.0",
+    "roots/wordpress": "5.5.1",
+    "roots/wp-config": "1.0.0",
+    "roots/wp-password-bcrypt": "1.0.0",
+    "koodimonni/composer-dropin-installer": "*",
+    "koodimonni-language/core-fr_fr": "^5.5",
+    "wpackagist-plugin/advanced-custom-fields": "^5.9",
+    "wpackagist-plugin/acf-openstreetmap-field": "^1.2",
+    "wpackagist-plugin/tinymce-advanced": "^5.5",
+    "wpackagist-plugin/adminimize": "^1.11",
+    "wpackagist-plugin/timber-library": "^1.18",
+    "wpackagist-plugin/post-smtp": "^2.0",
+    "wpackagist-plugin/contact-form-7": "^5.2"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.5.6",
+    "roave/security-advisories": "dev-master",
+    "symfony/var-dumper": "^5.1"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "installer-paths": {
+      "web/app/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin",
+        "wpackagist-plugin/advanced-custom-fields",
+        "wpackagist-plugin/acf-openstreetmap-field",
+        "wpackagist-plugin/tinymce-advanced",
+        "wpackagist-plugin/adminimize",
+        "wpackagist-plugin/timber-library",
+        "wpackagist-plugin/post-smtp",
+        "wpackagist-plugin/contact-form-7"
+      ],
+      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
+      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+    },
+    "wordpress-install-dir": "web/wp",
+    "dropin-paths": {
+      "web/app/languages/": ["vendor:koodimonni-language"],
+      "web/app/languages/plugins/": ["vendor:koodimonni-plugin-language"],
+      "web/app/languages/themes/": ["vendor:koodimonni-theme-language"]
+    }
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "php -r \"copy('.env.example', '.env');\""
+    ],
+    "test": [
+      "phpcs"
+    ]
+  }
+}

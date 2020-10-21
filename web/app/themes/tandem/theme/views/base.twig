@@ -1,0 +1,53 @@
+{% block html_head_container %}
+
+    {% include 'html-header.twig' %}
+    {% block head %}
+    {% endblock %}
+    </head>
+{% endblock %}
+
+<body class="{{ body_class }}">
+<div class="container">
+    <div class="header">
+        <div class="header-left">
+            {% if user == false %}
+                <a href="{{ site.link }}/login">Se connecter</a>
+            {% else %}
+                {% if user.can('administrator') %}
+                    <a href="{{ site.url }}/admin">Administration</a>
+                {% endif %}
+            {% endif %}
+        </div>
+        <div class="header-middle">
+            <a href="{{ site.link }}">{{ site.title }}</a>
+            <span>{{ site.description }}</span>
+        </div>
+        <div class="header-right">
+            {% if is_contact %}
+                <a href="{{ site.link }}/contact" class="current-menu-item">Contact</a>
+            {% else %}
+                <a href="{{ site.link }}/contact">Contact</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <nav class="navbar">
+        {% include 'partial/_menu.twig' with {items: menu.get_items} %}
+    </nav>
+
+    <div class="content">
+        {{ app.url }}
+        {% block content %}
+            Sorry, no content
+        {% endblock %}
+    </div>
+</div>
+
+{% block footer %}
+    <footer id="footer">
+        {#				{% include 'footer.twig' %}#}
+    </footer>
+    {{ function('wp_footer') }}
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    {% if currentPost | length > 0 %}
+        <h1 class="spectacle-title">Notre pièce en cours</h1>
+    {% endif %}
+    {% for post in currentPost | reverse %}
+        {% include ['partial/_tease-'~post.post_type~'.twig', 'tease.twig'] %}
+    {% endfor %}
+    <h1 class="spectacle-title">Nos prochaines pièces</h1>
+    {% for post in posts | reverse %}
+        {% include ['partial/_tease-'~post.post_type~'.twig', 'tease.twig'] %}
+    {% endfor %}
+
+    {% include 'partial/_pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+{% endblock %}

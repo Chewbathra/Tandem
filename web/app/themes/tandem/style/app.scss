@@ -1,0 +1,30 @@
+$background-color: #FFFFFF;
+$color: #59626a;
+$accent-color: #05668d;
+$tease-background-color: #bbc4f4;
+$border-color: #e5e5e5;
+$link-color: #1d3557;
+$alert-info-color: #f0f3bd;
+$alert-error-color : #f85d53;
+$full-color: #ff4a4a;
+$free-color: #318047;
+
+* {
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif !important;
+}
+
+body {
+  background-color: $background-color;
+  padding: 0 0 5rem;
+}
+
+
+
+
+@import "template/container";
+@import "header/header";
+@import "template/tease";
+@import "spectacle";
+@import "template/contact";
+@import "template/menu";

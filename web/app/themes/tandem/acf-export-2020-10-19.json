@@ -1,0 +1,145 @@
+[
+    {
+        "key": "group_5f8da4efe9492",
+        "title": "Spectacle",
+        "fields": [
+            {
+                "key": "field_5f8da5b90d9f8",
+                "label": "Informations importantes",
+                "name": "importants_informations",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "table",
+                "sub_fields": [
+                    {
+                        "key": "field_5f8da5cf0d9f9",
+                        "label": "Dates et heures",
+                        "name": "datetimes",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "collapsed": "",
+                        "min": 0,
+                        "max": 0,
+                        "layout": "table",
+                        "button_label": "",
+                        "sub_fields": [
+                            {
+                                "key": "field_5f8da5de0d9fa",
+                                "label": "Date",
+                                "name": "datetime",
+                                "type": "date_time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "d\/m\/Y g:i a",
+                                "return_format": "d\/m\/Y g:i a",
+                                "first_day": 1
+                            },
+                            {
+                                "key": "field_5f8da62c0d9fb",
+                                "label": "Complet",
+                                "name": "full",
+                                "type": "true_false",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "",
+                                "default_value": 0,
+                                "ui": 1,
+                                "ui_on_text": "complet",
+                                "ui_off_text": "Incomplet"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_5f8da65a381eb",
+                        "label": "Statut du spectacle",
+                        "name": "important_information_status",
+                        "type": "taxonomy",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "taxonomy": "spectacle_status",
+                        "field_type": "radio",
+                        "allow_null": 0,
+                        "add_term": 0,
+                        "save_terms": 1,
+                        "load_terms": 1,
+                        "return_format": "id",
+                        "multiple": 0
+                    }
+                ]
+            },
+            {
+                "center_lat": 46.2052601,
+                "center_lng": 6.1516571,
+                "zoom": 12,
+                "key": "field_5f8da4fba4ccb",
+                "label": "Théâtre",
+                "name": "theater",
+                "type": "open_street_map",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "osm",
+                "layers": [
+                    "OpenStreetMap"
+                ],
+                "allow_map_layers": 0,
+                "height": 400,
+                "max_markers": 1
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "spectacle"
+                }
+            ]
+        ],
+        "menu_order": 1,
+        "position": "acf_after_title",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    }
+]

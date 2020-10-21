@@ -1,0 +1,11 @@
+{% if menu %}
+    <ul class="navbar-menu-subitem">
+        {% for item in items %}
+{#            {{ item.title }}#}
+{#            {{ dump(item) }}#}
+            <li class="{{ item.classes | join(' ') }} menu-subitems">
+                <a class="" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
