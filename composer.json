@@ -21,12 +21,12 @@
     }
   ],
   "require": {
-    "php": ">=7.1",
-    "composer/installers": "^1.8",
-    "vlucas/phpdotenv": "^4.1.8",
+    "php": ">=7.4",
+    "composer/installers": "^1.10",
+    "vlucas/phpdotenv": "^5.3.0",
     "oscarotero/env": "^2.1",
-    "roots/bedrock-autoloader": "^1.0",
-    "roots/wordpress": "5.5.1",
+    "roots/bedrock-autoloader": "^1.0.4",
+    "roots/wordpress": "5.7.1",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.0.0",
     "koodimonni/composer-dropin-installer": "*",
@@ -37,7 +37,9 @@
     "wpackagist-plugin/adminimize": "^1.11",
     "wpackagist-plugin/timber-library": "^1.18",
     "wpackagist-plugin/post-smtp": "^2.0",
-    "wpackagist-plugin/contact-form-7": "^5.2"
+    "wpackagist-plugin/contact-form-7": "^5.2",
+    "wordplate/headache": "^1.1",
+    "wpackagist-plugin/hide-updates": "^1.1"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.5.6",
@@ -60,7 +62,9 @@
         "wpackagist-plugin/adminimize",
         "wpackagist-plugin/timber-library",
         "wpackagist-plugin/post-smtp",
-        "wpackagist-plugin/contact-form-7"
+        "wpackagist-plugin/contact-form-7",
+        "wordplate/headache",
+        "wpackagist-plugin/hide-updates"
       ],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
