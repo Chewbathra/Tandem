@@ -63,6 +63,7 @@
         "wpackagist-plugin/timber-library",
         "wpackagist-plugin/post-smtp",
         "wpackagist-plugin/contact-form-7",
+        "wpackagist-plugin/wordpress-seo"
         "wordplate/headache",
         "wpackagist-plugin/hide-updates"
       ],
